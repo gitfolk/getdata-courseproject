@@ -37,8 +37,8 @@ The output was required to be transformed from the source dataset using the foll
 
 This generated two output files
 
-* __HumanActivityRecognitionSmartphone-Observations-MeanSTD.csv:__ Culmination of Steps 1-4
-* __HumanActivityRecognitionSmartphone-SummaryAverage-MeanSTD.csv:__ Step 5
+* __HumanActivityRecognitionSmartphone-Observations-MeanSTD.txt:__ Culmination of Steps 1-4
+* __HumanActivityRecognitionSmartphone-SummaryAverage-MeanSTD.txt:__ Step 5
 
 The output files have the same variable structure as follows:
 * __activity:__ number indicating activity
@@ -132,28 +132,3 @@ The output files have the same variable structure as follows:
 * __angle(z,gravitymean):__ refer to source dataset - features_info.txt on angle and gravityMean()
 
 
-## Transformation Steps in run_analysis.R
-
-1. Merges the training and the test sets to create one data set.
-*  download source zip file into a temporary folder structure for processing
-*  combine subject, activity and feature columns for test observations from test files in temp zip
-*  combine subject, activity and feature columns for train observations from train files in temp zip
-*  combine rows from test and train observations to form one data set
-*  name data set with activity and subject headings
-*  name features with info from features.txt file in temp zip
-
-2. Extracts only the measurements on the mean and standard deviation for each measurement.
-*  using grepl, filter out only columns that contain, subject, activity or std and mean designations from the combined data set in 1.
-
-3. Uses descriptive activity names to name the activities in the data set
-*  using the deplyr library, inner join the activity id number with the id number from activity_labels.txt file from temp zip
-
-4. Appropriately labels the data set with descriptive activity names.
-* using definitions in the features_info.txt file, extend the abbreviated column names using gsub functionality
-* write information to _HumanActivityRecognitionSmartphone-Observations-MeanSTD.csv_ and _HumanActivityRecognitionSmartphone-SummaryAverage-MeanSTD.csv_
-* store dataframe as list element: observation
-
-5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-* using the aggregate function group the data by subject and activity, using mean to calculate the average for the observations
-* write information to _HumanActivityRecognitionSmartphone-SummaryAverage-MeanSTD.csv_
-* store dataframe as secondary list element: summary

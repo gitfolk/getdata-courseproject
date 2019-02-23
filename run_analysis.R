@@ -60,14 +60,14 @@ run_analysis<-function(){
     ## Finally make them all lower case as per lecture recommendations
     names(r)<-tolower(names(r))
     
-    write.csv(r,'HumanActivityRecognitionSmartphone-Observations-MeanSTD.csv')
+    write.table(r,'HumanActivityRecognitionSmartphone-Observations-MeanSTD.txt', row.names = FALSE)
     l<-list(observations=r)
     
     ## Step 5 - From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
     ## Aggregated mean based on subject and activity (also sort it for readability )
     r<-arrange(aggregate(r[,-(1:3)],r[,1:3], mean),subject, activity)
 
-    write.csv(r,'HumanActivityRecognitionSmartphone-SummaryAverage-MeanSTD.csv')
+    write.table(r,'HumanActivityRecognitionSmartphone-SummaryAverage-MeanSTD.txt', row.names = FALSE)
     l$summary=r
     l
 }
