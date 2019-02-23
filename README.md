@@ -1,9 +1,9 @@
- # Getting and Cleaning Data - Course Project
+ # Getting and Cleaning Data - Course Project ReadMe
  
  ## Contents
  
-* __CodeBook.md:__file describing source and output datasets and transformation procedures
-* __README.md:__this file describing project contents 
+* __CodeBook.md:__ file describing source and output datasets and transformation procedures
+* __README.md:__ this file describing project contents 
 * __run_analysis.R:__ file containg R script that transforms source dataset to output files
 * __HumanActivityRecognitionSmartphone-Observations-MeanSTD.txt:__ file containing outputs of observations (Requirements 1-4)
 * __HumanActivityRecognitionSmartphone-SummaryAverage-MeanSTD.txt:__ file containing summary of averages of observations(Requirement 5)
@@ -48,7 +48,7 @@ run_analysis.R is dependant on the dplyr package, and will automatically install
 
 4. Appropriately labels the data set with descriptive activity names.
 * using definitions in the features_info.txt file, extend the abbreviated column names using gsub functionality
-* write information to _HumanActivityRecognitionSmartphone-Observations-MeanSTD.txt_ and _HumanActivityRecognitionSmartphone-SummaryAverage-MeanSTD.txt_
+* write information to _HumanActivityRecognitionSmartphone-Observations-MeanSTD.txt_ 
 * store dataframe as list element: observation
 
 5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
