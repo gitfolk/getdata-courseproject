@@ -1,6 +1,6 @@
- #Getting and Cleaning Data - Course Project
+ # Getting and Cleaning Data - Course Project
  
- ##Contents
+ ## Contents
  
 * __CodeBook.md:__file describing source and output datasets and transformation procedures
 * __README.md:__this file describing project contents 
@@ -8,7 +8,7 @@
 * __HumanActivityRecognitionSmartphone-Observations-MeanSTD.csv:__ file containing outputs of observations (Requirements 1-4)
 * __HumanActivityRecognitionSmartphone-SummaryAverage-MeanSTD.csv:__ file containing summary of averages of observations(Requirement 5)
 
- ##Requirements
+ ## Requirements
 You should create one R script called run_analysis.R that does the following.
 
 1. Merges the training and the test sets to create one data set.
